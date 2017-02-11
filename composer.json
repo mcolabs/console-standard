@@ -1,0 +1,26 @@
+{
+    "name": "oslab/console",
+    "type": "library",
+    "description": "Small implementation of console with Dependency Injection.",
+    "keywords": ["console", "di", "dependency injection"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "florent",
+            "email": "orions07@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "^3.2",
+        "symfony/dependency-injection": "^3.2",
+        "symfony/config": "^3.2",
+        "symfony/yaml": "^3.2"
+    },
+    "require-dev": {
+      "phpunit/phpunit": "^5.3",
+      "phake/phake": "@stable"
+    },
+    "autoload": {
+        "psr-4": { "OsLab\\Console\\": "" }
+    }
+}

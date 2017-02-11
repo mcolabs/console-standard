@@ -7,6 +7,7 @@ OsLab Console
 [![Total Downloads](https://poser.pugx.org/OsLab/console-standard/downloads)](https://packagist.org/packages/OsLab/console-standard)
 [![Latest Stable Version](https://poser.pugx.org/OsLab/console-standard/v/stable)](https://packagist.org/packages/OsLab/console-standard)
 [![License](https://poser.pugx.org/OsLab/console-standard/license)](https://packagist.org/packages/OsLab/SupervisorBundle)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/fad73305-2d11-43ae-93eb-9caa1b4ac02c/mini.png)](https://insight.sensiolabs.com/projects/fad73305-2d11-43ae-93eb-9caa1b4ac02c)
 
 Small implementation of Symfony console standard with Dependency Injection.
 

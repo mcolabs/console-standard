@@ -11,9 +11,9 @@
 
 namespace OsLab\Console;
 
+use Symfony\Component\Config\FileLocatorInterface;
 use Symfony\Component\Console\Application;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
@@ -32,15 +32,17 @@ class ConsoleApplication extends Application
     /**
      * Constructor.
      *
-     * @param string $name
-     * @param string $version
+     * @param FileLocatorInterface $fileLocator
+     * @param string               $name
+     * @param string               $version
      */
-    public function __construct($name, $version)
+    public function __construct(FileLocatorInterface $fileLocator, $name, $version)
     {
         parent::__construct($name, $version);
 
+        // Build Container with services.yml
         $this->container = new ContainerBuilder();
-        $loader = new YamlFileLoader($this->container, new FileLocator($this->getConfigDir()));
+        $loader = new YamlFileLoader($this->container, $fileLocator);
         $loader->load('services.yml');
     }
 
@@ -53,15 +55,4 @@ class ConsoleApplication extends Application
     {
         return $this->container;
     }
-
-    /**
-     * Returns config directory.
-     *
-     * @return string
-     */
-    protected function getConfigDir()
-    {
-        return __DIR__.'/../../../app/config';
-    }
 }
-
